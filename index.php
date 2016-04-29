@@ -1,7 +1,7 @@
 <?php
-require_once("../../function/cURL-HTTP-function/curl.php");
-require_once("../login/func.php");
-if(isset($_POST['id'])&&isset($_POST['pwd'])&&checklogin($_POST['id'],$_POST['pwd'])){
+require_once("function/cURL-HTTP-function/curl.php");
+require_once("function/TNFSH-Login/Login.php");
+if(isset($_POST['id'])&&checklogin($_POST['id'],$_POST['pwd'])){
 	?>
 		<meta charset="UTF-8">
 		<base href="http://svrsql.tnfsh.tn.edu.tw/webschool/STD_DAY.asp">
@@ -34,10 +34,14 @@ if(isset($_POST['id'])&&isset($_POST['pwd'])&&checklogin($_POST['id'],$_POST['pw
 			<input name="" type="submit" value="送出">
 		</form>
 		<?php
-		if(isset($_POST["id"])){
+		if(isset($_POST['id'])&&!checklogin($_POST['id'],$_POST['pwd'])){
 			echo "登入失敗";
 		}
 		?>
+	<hr>
+	<?php
+	@include("function/Xiplus-Facebook-Badge/badge.php");
+	?>
 	</center>
 	</body>
 	</html>

@@ -1,0 +1,9 @@
+[submodule "function/Xiplus-Facebook-Badge"]
+	path = function/Xiplus-Facebook-Badge
+	url = https://github.com/Xi-Plus/Xiplus-Facebook-Badge.git
+[submodule "function/cURL-HTTP-function"]
+	path = function/cURL-HTTP-function
+	url = https://github.com/Xi-Plus/cURL-HTTP-function.git
+[submodule "function/TNFSH-Login"]
+	path = function/TNFSH-Login
+	url = https://github.com/Xi-Plus/TNFSH-Login.git
