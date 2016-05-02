@@ -13,7 +13,7 @@ if(isset($_POST['id'])&&checklogin($_POST['id'],$_POST['pwd'])){
 	echo $header[1];
 	$html=preg_match_all('/<tr><td class="DataTDX?"><font class="DataFONTX?">.*?&nbsp;<\/font><\/td><td class="DataTDX?"><font class="DataFONTX?">.*?&nbsp;<\/font><\/td><td class="DataTDX?"><font class="DataFONTX?">.*?&nbsp;<\/font><\/td><td class="DataTDX?"><font class="DataFONTX?">.*?&nbsp;<\/font><\/td><td class="DataTDX?"><font class="DataFONTX?">.*?&nbsp;<\/font><\/td><td class="DataTDX?"><font class="DataFONTX?">.*?&nbsp;<\/font><\/td><td class="DataTDX?"><font class="DataFONTX?">.*?&nbsp;<\/font><\/td><td class="DataTDX?"><font class="DataFONTX?">.*?&nbsp;<\/font><\/td><td class="DataTDX?"><font class="DataFONTX?">.*?&nbsp;<\/font><\/td><td class="DataTDX?"><font class="DataFONTX?">.*?&nbsp;<\/font><\/td><td class="DataTDX?"><font class="DataFONTX?">.*?&nbsp;<\/font><\/td><td class="DataTDX?"><font class="DataFONTX?">.*?&nbsp;<\/font><\/td><td class="DataTDX?"><font class="DataFONTX?">.*?&nbsp;<\/font><\/td><td class="DataTDX?"><font class="DataFONTX?">.*?&nbsp;<\/font><\/td> <\/tr>/', $html, $match);
 	foreach ($match[0] as $temp) {
-		if(strpos($temp, "曠課")!==false||strpos($temp, "遲到")!==false){
+		if(strpos($temp, "曠課")!==false||strpos($temp, "遲到")!==false||strpos($temp, "缺席")!==false){ 
 			echo $temp;
 		}
 	}
