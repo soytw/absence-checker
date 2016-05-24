@@ -8,6 +8,7 @@ if(isset($_POST['id'])&&checklogin($_POST['id'],$_POST['pwd'])){
 	<?php
 	$html=cURL_HTTP_Request("http://svrsql.tnfsh.tn.edu.tw/webschool/STD_DAY.asp",null,false,"cookie.txt")->html;
 	$html=iconv("BIG5", "UTF-8", $html);
+	$html=str_replace("Big5", "UTF-8", $html);
 	$html=str_replace("\r\n", "", $html);
 	preg_match('/^(.+<td class="ColumnTDX"><font class="ColumnFONT">課外活動<\/font><\/a><\/td> <\/tr>).*?(<tr> <td colspan="14" class="ColumnTD">.+)$/', $html, $header);
 	echo $header[1];
@@ -27,7 +28,7 @@ if(isset($_POST['id'])&&checklogin($_POST['id'],$_POST['pwd'])){
 	<body>
 	<center>
 		<h2>TNFSH列印曠課</h2>
-		<h3>Open Source: <a href="https://github.com/Xi-Plus/school/tree/master/tnfsh/print_absence" target="_blank">On Github</a></h3>
+		<h3>Open Source: <a href="https://github.com/Xi-Plus/TNFSH-Absence-Printer" target="_blank">On Github</a></h3>
 		<form action="" method="post">
 			帳號： <input name="id" type="text"><br>
 			密碼： <input name="pwd" type="password"><br>
